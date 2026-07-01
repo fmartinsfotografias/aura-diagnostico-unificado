@@ -1,0 +1,18 @@
+node_modules/
+npm-debug.log*
+.env
+
+# Banco local e arquivos auxiliares do SQLite
+server/*.sqlite
+server/*.sqlite-shm
+server/*.sqlite-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Logs locais
+*.log
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,2502 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Relatório de Imagem Profissional | AURA Fotografia</title>
+  <style>
+    :root {
+      --petroleo: #031923;
+      --profundo: #01131b;
+      --card: #062633;
+      --card-2: #082c3a;
+      --dourado: #d6a84f;
+      --dourado-claro: #f2d27a;
+      --texto: #f7f1e6;
+      --texto-suave: #b8c3c7;
+      --borda: rgba(214, 168, 79, 0.35);
+      --borda-suave: rgba(247, 241, 230, 0.12);
+      --sombra: 0 24px 80px rgba(0, 0, 0, 0.34);
+      --largura: 1160px;
+      --raio: 8px;
+      --nav-altura: 76px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--texto);
+      background: var(--profundo);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(214, 168, 79, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(214, 168, 79, 0.035) 1px, transparent 1px),
+        linear-gradient(135deg, #01131b 0%, #031923 44%, #021016 100%);
+      background-size: 74px 74px, 74px 74px, auto;
+      color: var(--texto);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(110deg, rgba(242, 210, 122, 0.08), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 42%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.34;
+      background-image:
+        linear-gradient(rgba(247, 241, 230, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247, 241, 230, 0.025) 1px, transparent 1px);
+      background-size: 18px 18px;
+      mask-image: linear-gradient(to bottom, black, transparent 76%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+    }
+
+    .report-status {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background:
+        linear-gradient(135deg, rgba(214, 168, 79, 0.08), transparent 42%),
+        var(--profundo);
+    }
+
+    .report-status-card {
+      width: min(560px, 100%);
+      padding: clamp(26px, 5vw, 42px);
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: rgba(6, 38, 51, 0.9);
+      box-shadow: var(--sombra);
+      text-align: center;
+    }
+
+    .report-status-card strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--dourado-claro);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .report-status-card p {
+      color: var(--texto-suave);
+      line-height: 1.7;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-altura);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border-bottom: 1px solid rgba(214, 168, 79, 0.18);
+      background: rgba(1, 19, 27, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      width: min(100%, var(--largura));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--borda);
+      border-radius: 50%;
+      color: var(--dourado-claro);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1;
+      background:
+        linear-gradient(145deg, rgba(214, 168, 79, 0.18), rgba(6, 38, 51, 0.72)),
+        var(--card);
+      box-shadow: inset 0 0 0 1px rgba(242, 210, 122, 0.1);
+      overflow: hidden;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 1px;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--texto);
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--texto-suave);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .desktop-nav a,
+    .mobile-menu a {
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: var(--texto-suave);
+      font-size: 13px;
+      line-height: 1;
+      padding: 12px 11px;
+      transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.is-active,
+    .mobile-menu a:hover {
+      border-color: rgba(214, 168, 79, 0.28);
+      background: rgba(214, 168, 79, 0.08);
+      color: var(--texto);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: relative;
+    }
+
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(214, 168, 79, 0.32);
+      border-radius: 8px;
+      background: rgba(6, 38, 51, 0.86);
+      color: var(--dourado-claro);
+    }
+
+    .icon-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .mobile-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      width: min(280px, calc(100vw - 32px));
+      display: grid;
+      gap: 6px;
+      padding: 10px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.98);
+      box-shadow: var(--sombra);
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 96px 22px;
+      scroll-margin-top: calc(var(--nav-altura) + 20px);
+    }
+
+    .section.compact {
+      padding-top: 72px;
+      padding-bottom: 72px;
+    }
+
+    .container {
+      width: min(100%, var(--largura));
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: calc(100vh - var(--nav-altura));
+      display: flex;
+      align-items: center;
+      padding: 46px 22px 72px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(110deg, rgba(1, 19, 27, 0.22), rgba(3, 25, 35, 0.8)),
+        linear-gradient(180deg, rgba(214, 168, 79, 0.05), transparent 56%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent 0 8%, rgba(214, 168, 79, 0.18) 8% 8.08%, transparent 8.08%),
+        linear-gradient(90deg, transparent 0 92%, rgba(214, 168, 79, 0.12) 92% 92.08%, transparent 92.08%),
+        linear-gradient(180deg, transparent, rgba(1, 19, 27, 0.92) 94%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.78fr);
+      gap: clamp(32px, 6vw, 76px);
+      align-items: center;
+      width: min(100%, var(--largura));
+      margin: 0 auto;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--dourado-claro);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--dourado);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    .quote-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      max-width: 720px;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.96;
+      color: var(--texto);
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      max-width: 690px;
+      margin-top: 26px;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.65;
+      color: var(--texto-suave);
+    }
+
+    .client-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 680px;
+      margin-top: 36px;
+    }
+
+    .meta-item {
+      min-height: 86px;
+      padding: 17px 18px;
+      border: 1px solid rgba(214, 168, 79, 0.24);
+      border-radius: var(--raio);
+      background: rgba(6, 38, 51, 0.58);
+    }
+
+    .meta-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--dourado-claro);
+    }
+
+    .meta-value {
+      display: block;
+      color: var(--texto);
+      font-size: 17px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 1px solid rgba(214, 168, 79, 0.46);
+      border-radius: 8px;
+      color: var(--profundo);
+      background: linear-gradient(135deg, var(--dourado-claro), var(--dourado));
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+      font-weight: 650;
+      line-height: 1;
+      transition: transform 180ms ease, filter 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .button.secondary {
+      color: var(--texto);
+      background: rgba(6, 38, 51, 0.78);
+      box-shadow: none;
+    }
+
+    .button svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    .photo-panel {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      align-items: stretch;
+      padding: 16px;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background:
+        linear-gradient(145deg, rgba(214, 168, 79, 0.16), rgba(6, 38, 51, 0.3)),
+        rgba(6, 38, 51, 0.58);
+      box-shadow: var(--sombra);
+    }
+
+    .photo-panel::before,
+    .photo-panel::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      width: 58px;
+      height: 58px;
+      pointer-events: none;
+      border-color: rgba(242, 210, 122, 0.66);
+      border-style: solid;
+    }
+
+    .photo-panel::before {
+      top: 28px;
+      left: 28px;
+      border-width: 1px 0 0 1px;
+    }
+
+    .photo-panel::after {
+      right: 28px;
+      bottom: 28px;
+      border-width: 0 1px 1px 0;
+    }
+
+    .photo-frame {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 580px;
+      border-radius: 6px;
+      overflow: hidden;
+      background:
+        linear-gradient(150deg, rgba(247, 241, 230, 0.08), transparent 35%),
+        linear-gradient(0deg, rgba(1, 19, 27, 0.25), rgba(1, 19, 27, 0.25)),
+        repeating-linear-gradient(90deg, rgba(242, 210, 122, 0.08) 0 1px, transparent 1px 22px),
+        #041e29;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: min(78%, 340px);
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      border: 1px solid rgba(214, 168, 79, 0.42);
+      border-radius: var(--raio);
+      background:
+        linear-gradient(180deg, rgba(247, 241, 230, 0.08), rgba(6, 38, 51, 0.44)),
+        rgba(1, 19, 27, 0.28);
+      text-align: center;
+      color: var(--texto-suave);
+    }
+
+    .photo-placeholder svg {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 18px;
+      color: var(--dourado-claro);
+    }
+
+    .photo-placeholder strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--texto);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px;
+      border: 1px solid rgba(214, 168, 79, 0.24);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.78);
+      backdrop-filter: blur(12px);
+    }
+
+    .photo-caption span {
+      color: var(--texto-suave);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .photo-caption strong {
+      color: var(--texto);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.56fr) minmax(240px, 0.44fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--dourado-claro);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 12px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--dourado);
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .section-lead {
+      color: var(--texto-suave);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .panel {
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background:
+        linear-gradient(135deg, rgba(247, 241, 230, 0.045), transparent 34%),
+        rgba(6, 38, 51, 0.72);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
+    }
+
+    .summary-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.74fr);
+      gap: 24px;
+      padding: clamp(24px, 4vw, 38px);
+    }
+
+    .summary-text {
+      font-size: clamp(18px, 2.2vw, 24px);
+      line-height: 1.62;
+      color: var(--texto);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .mini-card,
+    .content-card,
+    .avoid-card,
+    .direction-card,
+    .photo-use-card,
+    .communication-card,
+    .color-card,
+    .step-card {
+      border: 1px solid rgba(214, 168, 79, 0.22);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.38);
+    }
+
+    .mini-card {
+      min-height: 144px;
+      padding: 18px;
+    }
+
+    .mini-card span,
+    .card-eyebrow {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--dourado-claro);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 20px;
+      line-height: 1.22;
+      color: var(--texto);
+    }
+
+    .mini-card p,
+    .content-card p,
+    .avoid-card p,
+    .direction-card p,
+    .photo-use-card p,
+    .communication-card p,
+    .step-card p {
+      color: var(--texto-suave);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .archetype-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .content-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(24px, 4vw, 34px);
+    }
+
+    .content-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dourado), transparent);
+    }
+
+    .content-card h3,
+    .avoid-card h3,
+    .direction-card h3,
+    .photo-use-card h3,
+    .communication-card h3,
+    .step-card h3 {
+      margin-bottom: 12px;
+      color: var(--texto);
+      font-size: 21px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .content-card .archetype-name {
+      margin-bottom: 18px;
+      color: var(--dourado-claro);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4vw, 46px);
+      line-height: 1;
+    }
+
+    .content-card dl {
+      display: grid;
+      gap: 16px;
+      margin: 24px 0 0;
+    }
+
+    .content-card dt {
+      margin-bottom: 6px;
+      color: var(--texto);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .content-card dd {
+      margin: 0;
+      color: var(--texto-suave);
+      line-height: 1.6;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--dourado);
+      border-radius: 0 var(--raio) var(--raio) 0;
+      background: rgba(214, 168, 79, 0.08);
+      color: var(--texto-suave);
+      line-height: 1.65;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid rgba(214, 168, 79, 0.46);
+      border-radius: 6px;
+      background: rgba(6, 38, 51, 0.7);
+      color: var(--texto);
+      font-weight: 620;
+    }
+
+    .perception-explain {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .text-block {
+      padding: 26px;
+      border: 1px solid rgba(214, 168, 79, 0.22);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.34);
+    }
+
+    .text-block p {
+      color: var(--texto-suave);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .orientation-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .orientation-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 13px 14px;
+      border: 1px solid rgba(247, 241, 230, 0.1);
+      border-radius: 6px;
+      background: rgba(247, 241, 230, 0.035);
+      color: var(--texto);
+      line-height: 1.3;
+    }
+
+    .orientation-list svg {
+      width: 18px;
+      height: 18px;
+      color: var(--dourado-claro);
+      flex: 0 0 auto;
+    }
+
+    .avoid-grid,
+    .direction-grid,
+    .photo-use-grid,
+    .communication-grid,
+    .step-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .avoid-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .avoid-card,
+    .direction-card,
+    .photo-use-card,
+    .communication-card,
+    .step-card {
+      padding: 20px;
+    }
+
+    .avoid-card h3 {
+      font-size: 18px;
+    }
+
+    .direction-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .direction-card {
+      min-height: 210px;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border: 1px solid rgba(214, 168, 79, 0.28);
+      border-radius: 8px;
+      color: var(--dourado-claro);
+      background: rgba(214, 168, 79, 0.08);
+    }
+
+    .card-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .color-card {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+    }
+
+    .color-dot {
+      width: 62px;
+      height: 62px;
+      border: 1px solid rgba(247, 241, 230, 0.22);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 6px rgba(1, 19, 27, 0.22), 0 14px 32px rgba(0, 0, 0, 0.22);
+    }
+
+    .color-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--texto);
+      font-size: 17px;
+      line-height: 1.25;
+    }
+
+    .color-card code {
+      display: inline-block;
+      margin-bottom: 9px;
+      color: var(--dourado-claro);
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: 13px;
+    }
+
+    .color-card p {
+      color: var(--texto-suave);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .usage-panel {
+      padding: clamp(24px, 4vw, 34px);
+    }
+
+    .usage-panel h3 {
+      margin-bottom: 18px;
+      font-size: 25px;
+      line-height: 1.2;
+      color: var(--texto);
+    }
+
+    .analysis-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      gap: 18px;
+      padding: clamp(24px, 4vw, 34px);
+    }
+
+    .analysis-main {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .analysis-main p {
+      color: var(--texto-suave);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .analysis-cards {
+      display: grid;
+      gap: 12px;
+    }
+
+    .analysis-card,
+    .situation-color-card {
+      border: 1px solid rgba(214, 168, 79, 0.22);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.34);
+      padding: 18px;
+    }
+
+    .analysis-card span,
+    .situation-color-card span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--dourado-claro);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .analysis-card p,
+    .situation-color-card p {
+      color: var(--texto-suave);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .analysis-card strong,
+    .situation-color-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--texto);
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .usage-tips {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .usage-tips li {
+      min-height: 118px;
+      padding: 16px;
+      border: 1px solid rgba(214, 168, 79, 0.18);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.32);
+      color: var(--texto-suave);
+      line-height: 1.55;
+    }
+
+    .color-situation-panel {
+      margin-top: 18px;
+    }
+
+    .situation-color-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .photo-use-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .photo-use-card {
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail-row {
+      display: grid;
+      gap: 4px;
+    }
+
+    .detail-row span {
+      color: var(--dourado-claro);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .detail-row p {
+      color: var(--texto-suave);
+      line-height: 1.55;
+    }
+
+    .application-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--borda);
+      border-radius: var(--raio);
+      background: rgba(6, 38, 51, 0.64);
+    }
+
+    .application-table th,
+    .application-table td {
+      padding: 18px;
+      border-bottom: 1px solid rgba(214, 168, 79, 0.16);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .application-table th {
+      color: var(--dourado-claro);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      background: rgba(1, 19, 27, 0.42);
+    }
+
+    .application-table td {
+      color: var(--texto-suave);
+      line-height: 1.55;
+    }
+
+    .application-table td:first-child {
+      color: var(--texto);
+      font-weight: 650;
+    }
+
+    .application-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .communication-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .communication-card {
+      min-height: 240px;
+    }
+
+    .communication-card h3 {
+      font-size: 18px;
+    }
+
+    .quote-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(30px, 6vw, 64px);
+      border: 1px solid rgba(214, 168, 79, 0.58);
+      border-radius: var(--raio);
+      background:
+        linear-gradient(130deg, rgba(214, 168, 79, 0.16), transparent 42%),
+        rgba(6, 38, 51, 0.82);
+      box-shadow: var(--sombra);
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      top: -38px;
+      right: 28px;
+      color: rgba(242, 210, 122, 0.18);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 190px;
+      line-height: 1;
+    }
+
+    .quote-text {
+      position: relative;
+      max-width: 920px;
+      color: var(--texto);
+      font-size: clamp(30px, 5vw, 60px);
+      line-height: 1.12;
+    }
+
+    .step-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .step-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(214, 168, 79, 0.42);
+      border-radius: 50%;
+      color: var(--profundo);
+      background: linear-gradient(135deg, var(--dourado-claro), var(--dourado));
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    .closing {
+      padding-bottom: 110px;
+    }
+
+    .closing-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(260px, 0.42fr);
+      gap: 28px;
+      align-items: end;
+      padding: clamp(28px, 5vw, 54px);
+    }
+
+    .closing-panel p {
+      max-width: 800px;
+      margin-top: 18px;
+      color: var(--texto-suave);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .signature {
+      display: grid;
+      gap: 8px;
+      padding: 26px;
+      border: 1px solid rgba(214, 168, 79, 0.25);
+      border-radius: var(--raio);
+      background: rgba(1, 19, 27, 0.38);
+    }
+
+    .signature strong {
+      color: var(--texto);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .signature span {
+      color: var(--dourado-claro);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .final-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .hero-grid,
+      .section-header,
+      .summary-panel,
+      .perception-explain,
+      .analysis-panel,
+      .closing-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .photo-panel,
+      .photo-frame {
+        min-height: min(72vh, 680px);
+      }
+
+      .avoid-grid,
+      .direction-grid,
+      .photo-use-grid,
+      .communication-grid,
+      .usage-tips,
+      .situation-color-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .color-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --nav-altura: 68px;
+      }
+
+      .topbar {
+        padding: 0 16px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand-name {
+        font-size: 14px;
+        letter-spacing: 0.13em;
+      }
+
+      .brand-sub {
+        display: none;
+      }
+
+      .section {
+        padding: 70px 16px;
+      }
+
+      .hero {
+        padding: 36px 16px 60px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 13vw, 60px);
+      }
+
+      .hero-subtitle,
+      .section-lead {
+        font-size: 16px;
+      }
+
+      .client-meta,
+      .metric-grid,
+      .archetype-grid,
+      .avoid-grid,
+      .direction-grid,
+      .photo-use-grid,
+      .communication-grid,
+      .usage-tips,
+      .situation-color-grid,
+      .orientation-list,
+      .step-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .final-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .photo-panel,
+      .photo-frame {
+        min-height: 520px;
+      }
+
+      .photo-panel {
+        padding: 10px;
+      }
+
+      .photo-caption {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        display: grid;
+      }
+
+      .summary-panel,
+      .usage-panel,
+      .closing-panel {
+        padding: 22px;
+      }
+
+      .tag {
+        min-height: 40px;
+      }
+
+      .application-table,
+      .application-table thead,
+      .application-table tbody,
+      .application-table th,
+      .application-table td,
+      .application-table tr {
+        display: block;
+      }
+
+      .application-table thead {
+        display: none;
+      }
+
+      .application-table {
+        border: 0;
+        background: transparent;
+      }
+
+      .application-table tr {
+        margin-bottom: 12px;
+        border: 1px solid rgba(214, 168, 79, 0.24);
+        border-radius: var(--raio);
+        background: rgba(6, 38, 51, 0.64);
+        overflow: hidden;
+      }
+
+      .application-table td {
+        position: relative;
+        padding: 16px;
+        border-bottom: 1px solid rgba(214, 168, 79, 0.12);
+      }
+
+      .application-table td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 6px;
+        color: var(--dourado-claro);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-kicker,
+      .section-label {
+        letter-spacing: 0.11em;
+      }
+
+      .photo-panel,
+      .photo-frame {
+        min-height: 480px;
+      }
+
+      .photo-placeholder {
+        width: 88%;
+      }
+
+      .color-card {
+        grid-template-columns: 54px minmax(0, 1fr);
+      }
+
+      .color-dot {
+        width: 50px;
+        height: 50px;
+      }
+
+      .quote-card {
+        padding: 28px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media print {
+      :root {
+        color-scheme: light;
+      }
+
+      body {
+        background: #ffffff !important;
+        color: #061821 !important;
+      }
+
+      body::before,
+      body::after,
+      .topbar,
+      .hero-actions,
+      .final-actions {
+        display: none !important;
+      }
+
+      .hero,
+      .section {
+        min-height: auto;
+        padding: 28px 0 !important;
+        break-inside: avoid;
+      }
+
+      .container,
+      .hero-grid {
+        width: 100%;
+      }
+
+      .panel,
+      .mini-card,
+      .content-card,
+      .avoid-card,
+      .direction-card,
+      .photo-use-card,
+      .communication-card,
+      .color-card,
+      .step-card,
+      .quote-card,
+      .signature,
+      .text-block,
+      .meta-item,
+      .application-table {
+        background: #ffffff !important;
+        color: #061821 !important;
+        border-color: #c79a3e !important;
+        box-shadow: none !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      .meta-value,
+      .summary-text,
+      .quote-text,
+      .signature strong,
+      .content-card .archetype-name {
+        color: #061821 !important;
+      }
+
+      p,
+      .section-lead,
+      .mini-card p,
+      .content-card p,
+      .avoid-card p,
+      .direction-card p,
+      .photo-use-card p,
+      .communication-card p,
+      .closing-panel p,
+      .detail-row p,
+      .application-table td {
+        color: #33474f !important;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="report-status" id="reportStatus" hidden>
+    <div class="report-status-card">
+      <strong id="reportStatusTitle">Carregando relatório</strong>
+      <p id="reportStatusText">Estamos preparando sua entrega premium.</p>
+    </div>
+  </section>
+
+  <div class="page-shell" id="topo">
+    <header class="topbar" aria-label="Navegação do relatório">
+      <div class="topbar-inner">
+        <a class="brand" href="#topo" aria-label="AURA Fotografia">
+          <span class="brand-mark" id="logoMarca">A</span>
+          <span class="brand-text">
+            <span class="brand-name">AURA</span>
+            <span class="brand-sub">Fotografia</span>
+          </span>
+        </a>
+
+        <nav class="desktop-nav" id="desktopNav" aria-label="Seções do relatório"></nav>
+
+        <div class="mobile-nav">
+          <button class="icon-button" type="button" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <nav class="mobile-menu" id="mobileMenu" aria-label="Menu compacto"></nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="tituloRelatorio">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="hero-kicker">Ensaio Carreira Estratégico</span>
+            <h1 id="tituloRelatorio">Relatório de Imagem Profissional</h1>
+            <p class="hero-subtitle">Uma leitura estratégica sobre como sua imagem deve comunicar valor, confiança e posicionamento.</p>
+            <div class="client-meta" id="clientMeta" aria-label="Dados do cliente"></div>
+            <div class="hero-actions">
+              <a class="button" href="#resumo">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 5v14m0 0 6-6m-6 6-6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Ver relatório
+              </a>
+              <button class="button secondary" type="button" data-print>
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 9V4h10v5M7 14h10v6H7v-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+                Imprimir ou salvar em PDF
+              </button>
+            </div>
+          </div>
+
+          <aside class="photo-panel reveal" aria-label="Foto principal do cliente">
+            <div class="photo-frame" id="fotoPrincipal"></div>
+            <div class="photo-caption">
+              <span>Direção visual</span>
+              <strong id="photoCaption">Imagem à altura da sua carreira</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Resumo estratégico - edite dadosRelatorio.resumoEstrategico e dadosRelatorio.cardsResumo no JavaScript. -->
+      <section class="section" id="resumo" aria-labelledby="tituloResumo">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Resumo estratégico</span>
+              <h2 id="tituloResumo">Seu momento profissional</h2>
+            </div>
+            <p class="section-lead">Uma síntese objetiva do que a imagem precisa sustentar no momento atual da carreira.</p>
+          </header>
+          <div class="panel summary-panel reveal">
+            <p class="summary-text" id="resumoTexto"></p>
+            <div class="metric-grid" id="cardsResumo"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Arquétipo visual - edite dadosRelatorio.arquetipos no JavaScript. -->
+      <section class="section compact" id="arquetipo" aria-labelledby="tituloArquetipo">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Arquétipo visual</span>
+              <h2 id="tituloArquetipo">Seu arquétipo visual</h2>
+            </div>
+            <p class="section-lead">A direção simbólica que ajuda a imagem a comunicar intenção sem parecer personagem ou fantasia.</p>
+          </header>
+          <div class="archetype-grid reveal" id="archetypeGrid"></div>
+          <p class="note reveal">O arquétipo é usado aqui como direção estratégica de comunicação visual, não como diagnóstico psicológico.</p>
+        </div>
+      </section>
+
+      <section class="section compact" id="analise-estrategica" aria-labelledby="tituloAnaliseEstrategica">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label" id="origemAnalise">Análise estratégica</span>
+              <h2 id="tituloAnaliseEstrategica">Leitura feita a partir do diagnóstico</h2>
+            </div>
+            <p class="section-lead">Aqui aparecem as conexões entre respostas, arquétipos, paleta e aplicação prática das imagens.</p>
+          </header>
+          <div class="panel analysis-panel reveal" id="analysisPanel"></div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Percepção desejada - edite dadosRelatorio.percepcaoDesejada e dadosRelatorio.textoPercepcaoDesejada no JavaScript. -->
+      <section class="section compact" id="percepcao" aria-labelledby="tituloPercepcao">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Percepção desejada</span>
+              <h2 id="tituloPercepcao">Como sua imagem deve ser percebida</h2>
+            </div>
+            <p class="section-lead">As palavras-chave abaixo orientam escolhas de expressão, roupa, cenário, luz e seleção final.</p>
+          </header>
+          <div class="tag-cloud reveal" id="percepcaoDesejada"></div>
+          <div class="perception-explain reveal">
+            <div class="text-block">
+              <p id="textoPercepcaoDesejada"></p>
+            </div>
+            <ul class="orientation-list" id="orientadoresPercepcao"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Percepção a evitar - edite dadosRelatorio.percepcaoEvitar no JavaScript. -->
+      <section class="section compact" id="evitar" aria-labelledby="tituloEvitar">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Percepção a evitar</span>
+              <h2 id="tituloEvitar">O que sua imagem não deve comunicar</h2>
+            </div>
+            <p class="section-lead">A força da imagem nasce também do que decidimos não reforçar.</p>
+          </header>
+          <div class="avoid-grid reveal" id="avoidGrid"></div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Direção visual - edite dadosRelatorio.direcaoVisual no JavaScript. -->
+      <section class="section" id="direcao" aria-labelledby="tituloDirecao">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Direção do ensaio</span>
+              <h2 id="tituloDirecao">Direção visual construída para você</h2>
+            </div>
+            <p class="section-lead">Um mapa prático para conduzir postura, expressão, luz e composição durante o uso das imagens.</p>
+          </header>
+          <div class="direction-grid reveal" id="directionGrid"></div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Paleta - edite dadosRelatorio.coresSugeridas e dadosRelatorio.comoUsarCores no JavaScript. -->
+      <section class="section compact" id="cores" aria-labelledby="tituloCores">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Paleta sugerida</span>
+              <h2 id="tituloCores">Cores recomendadas para sustentar sua imagem</h2>
+            </div>
+            <p class="section-lead">Tons escolhidos para reforçar autoridade, acolhimento e coerência visual.</p>
+          </header>
+          <div class="color-grid reveal" id="colorGrid"></div>
+          <div class="panel usage-panel reveal">
+            <h3>Como usar essas cores</h3>
+            <ul class="usage-tips" id="colorTips"></ul>
+          </div>
+          <div class="panel usage-panel reveal color-situation-panel">
+            <h3>Cores por situação</h3>
+            <div class="situation-color-grid" id="situationColorGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Uso das fotos - edite dadosRelatorio.usoFotos no JavaScript. -->
+      <section class="section" id="uso-fotos" aria-labelledby="tituloUsoFotos">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Uso das fotos</span>
+              <h2 id="tituloUsoFotos">Como usar suas imagens no dia a dia</h2>
+            </div>
+            <p class="section-lead">Cada foto pode cumprir uma função diferente na presença digital e comercial.</p>
+          </header>
+          <div class="photo-use-grid reveal" id="photoUseGrid"></div>
+        </div>
+      </section>
+
+      <section class="section compact" id="mapa" aria-labelledby="tituloMapa">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Mapa de aplicação</span>
+              <h2 id="tituloMapa">Onde aplicar cada tipo de imagem</h2>
+            </div>
+            <p class="section-lead">No celular, este mapa se transforma em cards para manter a leitura confortável.</p>
+          </header>
+          <div class="reveal">
+            <table class="application-table" id="applicationTable">
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Imagem indicada</th>
+                  <th>Objetivo</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Orientação de comunicação - edite dadosRelatorio.orientacaoComunicacao no JavaScript. -->
+      <section class="section compact" id="comunicacao" aria-labelledby="tituloComunicacao">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Comunicação</span>
+              <h2 id="tituloComunicacao">Imagem, texto e presença precisam falar a mesma coisa</h2>
+            </div>
+            <p class="section-lead">A foto escolhida deve sustentar o tom do conteúdo, não apenas ilustrar a publicação.</p>
+          </header>
+          <div class="communication-grid reveal" id="communicationGrid"></div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Frase guia - edite dadosRelatorio.fraseGuia no JavaScript. -->
+      <section class="section compact" id="frase" aria-labelledby="tituloFrase">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Frase guia</span>
+              <h2 id="tituloFrase">Frase guia da sua imagem profissional</h2>
+            </div>
+            <p class="section-lead">A síntese que ajuda a escolher quais imagens entram em cada canal.</p>
+          </header>
+          <div class="quote-card reveal">
+            <p class="quote-text" id="fraseGuia"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHATGPT: Próximos passos - edite dadosRelatorio.proximosPassos no JavaScript. -->
+      <section class="section compact" id="proximos-passos" aria-labelledby="tituloProximos">
+        <div class="container">
+          <header class="section-header reveal">
+            <div>
+              <span class="section-label">Próximos passos</span>
+              <h2 id="tituloProximos">Como aplicar sua nova imagem</h2>
+            </div>
+            <p class="section-lead">Uma checklist visual para transformar o ensaio em presença profissional consistente.</p>
+          </header>
+          <div class="step-grid reveal" id="stepGrid"></div>
+        </div>
+      </section>
+
+      <section class="section closing" id="encerramento" aria-labelledby="tituloEncerramento">
+        <div class="container">
+          <div class="panel closing-panel reveal">
+            <div>
+              <span class="section-label">Encerramento</span>
+              <h2 id="tituloEncerramento">Sua imagem a partir de agora</h2>
+              <p>Este relatório foi criado para orientar o uso estratégico das suas imagens. As fotos entregues não são apenas registros. Elas fazem parte da construção da sua presença profissional, da forma como seu público percebe seu valor e da confiança criada antes mesmo do primeiro contato.</p>
+              <div class="final-actions">
+                <a class="button secondary" href="#topo">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 19V5m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Voltar ao topo
+                </a>
+                <button class="button" type="button" data-print>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 9V4h10v5M7 14h10v6H7v-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                  Imprimir ou salvar em PDF
+                </button>
+                <a class="button secondary" id="contactButton" href="#">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 5h16v14H4V5Zm0 2 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Entrar em contato
+                </a>
+              </div>
+            </div>
+            <aside class="signature">
+              <strong>AURA Fotografia</strong>
+              <span>Imagem à altura da sua carreira.</span>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const exemploRelatorio = {
+      cliente: "Ana Paula Martins",
+      profissao: "Psicóloga",
+      cidade: "Indaial SC",
+      data: "Julho de 2026",
+      logo: "",
+      fotoPrincipal: "",
+      contatoUrl: "#",
+      arquetipoPrincipal: "Cuidador",
+      arquetipoSecundario: "Sábio",
+      fraseGuia: "Minha imagem deve comunicar acolhimento, clareza e confiança antes mesmo da primeira conversa.",
+      resumoEstrategico: "Ana Paula vive um momento de consolidação da própria autoridade com uma presença mais clara, acolhedora e segura. A imagem precisa aproximar sem perder profundidade, comunicar preparo técnico sem endurecer a expressão e criar confiança antes mesmo do primeiro contato.",
+      cardsResumo: [
+        {
+          titulo: "Objetivo principal",
+          destaque: "Gerar confiança imediata",
+          texto: "Reforçar uma presença profissional acolhedora, consistente e segura."
+        },
+        {
+          titulo: "Cliente ideal",
+          destaque: "Pessoas em busca de escuta qualificada",
+          texto: "Público que valoriza cuidado, clareza emocional e acompanhamento responsável."
+        },
+        {
+          titulo: "Percepção desejada",
+          destaque: "Acolhimento com autoridade",
+          texto: "Uma imagem humana, estável e capaz de transmitir tranquilidade."
+        },
+        {
+          titulo: "Mensagem central",
+          destaque: "Você pode se sentir segura aqui",
+          texto: "A comunicação visual deve sustentar vínculo, confiança e profissionalismo."
+        }
+      ],
+      arquetipos: [
+        {
+          tipo: "Arquétipo principal",
+          nome: "Cuidador",
+          descricao: "Comunica presença, empatia, proteção e disponibilidade emocional sem perder firmeza.",
+          nasFotos: "Aparece em expressões serenas, olhar acolhedor, postura aberta, gestos suaves e composições com luz confortável."
+        },
+        {
+          tipo: "Arquétipo secundário",
+          nome: "Sábio",
+          descricao: "Traz clareza, profundidade, método e confiança técnica para sustentar a autoridade profissional.",
+          nasFotos: "Aparece em enquadramentos mais limpos, olhar direto, roupas estruturadas e cenas que sugerem escuta, estudo e orientação."
+        }
+      ],
+      origemAnalise: "Exemplo de análise estratégica",
+      analiseEstrategica: {
+        texto: "Esta leitura cruza percepção desejada, arquétipos, estilo visual e uso das imagens para transformar o diagnóstico em decisões práticas de ensaio e comunicação.",
+        arquetipoPrincipal: "O Cuidador conduz a primeira impressão com acolhimento, presença emocional e sensação de segurança.",
+        arquetipoSecundario: "O Sábio complementa a leitura trazendo clareza, método e confiança técnica.",
+        estrategiaCromatica: "A paleta combina profundidade, respiro e sofisticação: tons escuros sustentam autoridade, tons claros aproximam e o dourado entra apenas como detalhe de valor."
+      },
+      percepcaoDesejada: ["Confiança", "Acolhimento", "Clareza", "Segurança", "Humanidade"],
+      textoPercepcaoDesejada: "Essas palavras ajudam a definir o tom de cada decisão visual. A expressão deve ser acessível, a postura deve ser estável, a roupa precisa transmitir cuidado e clareza, o fundo deve apoiar a leitura da pessoa e a luz deve suavizar sem retirar presença.",
+      orientadoresPercepcao: ["Expressão", "Postura", "Roupa", "Fundo", "Luz", "Escolha final das imagens"],
+      percepcaoEvitar: [
+        {
+          titulo: "Evitar frieza",
+          texto: "A autoridade deve aparecer com proximidade, não como distância emocional."
+        },
+        {
+          titulo: "Evitar rigidez",
+          texto: "A postura precisa ser firme, mas a expressão não deve parecer fechada ou tensa."
+        },
+        {
+          titulo: "Evitar distância",
+          texto: "A imagem deve convidar o público a se aproximar com confiança e serenidade."
+        },
+        {
+          titulo: "Evitar artificialidade",
+          texto: "Gestos, sorrisos e cenários devem parecer naturais, intencionais e verdadeiros."
+        }
+      ],
+      direcaoVisual: [
+        {
+          icone: "spark",
+          titulo: "Expressão",
+          texto: "Serena, receptiva e levemente sorridente, com sensação de presença real."
+        },
+        {
+          icone: "line",
+          titulo: "Postura",
+          texto: "Coluna alongada, ombros relaxados e corpo orientado para abertura."
+        },
+        {
+          icone: "hand",
+          titulo: "Mãos",
+          texto: "Gestos suaves, mãos em repouso ou em ação discreta para evitar tensão."
+        },
+        {
+          icone: "eye",
+          titulo: "Olhar",
+          texto: "Direto quando a intenção for confiança; lateral quando a imagem pedir reflexão."
+        },
+        {
+          icone: "smile",
+          titulo: "Sorriso",
+          texto: "Contido e verdadeiro, com mais acolhimento do que performance."
+        },
+        {
+          icone: "fabric",
+          titulo: "Roupas",
+          texto: "Peças de bom caimento, tecidos sem excesso de informação e cores coerentes."
+        },
+        {
+          icone: "frame",
+          titulo: "Fundos",
+          texto: "Ambientes limpos, consultivos e silenciosos, sem competir com a expressão."
+        },
+        {
+          icone: "sun",
+          titulo: "Luz",
+          texto: "Luz macia, elegante e direcional o suficiente para trazer profundidade."
+        },
+        {
+          icone: "crop",
+          titulo: "Enquadramentos",
+          texto: "Retratos próximos para vínculo e planos médios para autoridade contextual."
+        }
+      ],
+      coresSugeridas: [
+        { nome: "Azul petróleo", hex: "#031923", uso: "Autoridade e profundidade" },
+        { nome: "Off white", hex: "#F7F1E6", uso: "Clareza e leveza" },
+        { nome: "Dourado discreto", hex: "#D6A84F", uso: "Sofisticação" }
+      ],
+      comoUsarCores: [
+        "Use tons mais profundos em fotos de autoridade.",
+        "Use tons claros em imagens de proximidade.",
+        "Evite cores que chamem mais atenção do que sua expressão.",
+        "Mantenha coerência entre roupa, fundo e objetivo da imagem."
+      ],
+      coresPorSituacao: [
+        {
+          situacao: "Fotos de autoridade",
+          cores: "Azul petróleo, azul profundo e off white",
+          orientacao: "Use bases escuras, peças estruturadas e contraste limpo para comunicar segurança, profundidade e posicionamento."
+        },
+        {
+          situacao: "Fotos de proximidade",
+          cores: "Off white, tons claros e neutros suaves",
+          orientacao: "Use cores que iluminem o rosto e reduzam distância, especialmente para conteúdos de acolhimento e bastidores."
+        },
+        {
+          situacao: "Fotos institucionais",
+          cores: "Azul petróleo, off white e dourado discreto",
+          orientacao: "Combine profundidade com respiro para site, propostas, apresentações e pontos oficiais da presença profissional."
+        },
+        {
+          situacao: "Conteúdos educativos",
+          cores: "Azul profundo com pontos de clareza",
+          orientacao: "Use fundos limpos e contraste moderado para reforçar técnica, organização mental e leitura objetiva."
+        }
+      ],
+      usoFotos: [
+        {
+          tipo: "Foto de perfil",
+          onde: "WhatsApp profissional, LinkedIn e Instagram.",
+          objetivo: "Criar reconhecimento imediato e confiança no primeiro contato.",
+          exemplo: "Retrato próximo, olhar direto, expressão acolhedora e fundo limpo."
+        },
+        {
+          tipo: "Foto de autoridade",
+          onde: "Posts educativos, palestras, propostas e materiais institucionais.",
+          objetivo: "Sustentar domínio técnico e segurança sem perder humanidade.",
+          exemplo: "Plano médio, postura firme, roupa estruturada e composição elegante."
+        },
+        {
+          tipo: "Foto de proximidade",
+          onde: "Stories, bastidores, apresentação pessoal e conteúdos de conexão.",
+          objetivo: "Mostrar disponibilidade, escuta e presença acessível.",
+          exemplo: "Sorriso leve, luz suave e enquadramento com sensação de conversa."
+        },
+        {
+          tipo: "Foto institucional",
+          onde: "Site, página de contato, Google Meu Negócio e apresentações.",
+          objetivo: "Dar consistência profissional aos pontos oficiais da marca pessoal.",
+          exemplo: "Imagem limpa, vertical ou horizontal, com espaço para textos."
+        },
+        {
+          tipo: "Foto para conteúdo",
+          onde: "Carrosséis, capas de vídeo, newsletters e posts de reflexão.",
+          objetivo: "Acompanhar ideias importantes com presença visual coerente.",
+          exemplo: "Olhar lateral, gesto de leitura ou cena que sugira pensamento."
+        },
+        {
+          tipo: "Foto para site",
+          onde: "Página inicial, seção sobre, página de serviços e captação.",
+          objetivo: "Construir uma primeira impressão premium, clara e memorável.",
+          exemplo: "Imagem ampla, bem iluminada, com respiro para chamada textual."
+        }
+      ],
+      mapaAplicacao: [
+        { canal: "LinkedIn", imagem: "Foto de autoridade", objetivo: "Reforçar credibilidade, clareza e posicionamento profissional." },
+        { canal: "Instagram", imagem: "Perfil e proximidade", objetivo: "Combinar reconhecimento, vínculo e consistência editorial." },
+        { canal: "WhatsApp profissional", imagem: "Foto de perfil", objetivo: "Transmitir confiança antes da primeira mensagem." },
+        { canal: "Site", imagem: "Foto institucional", objetivo: "Apresentar presença profissional com sofisticação e objetividade." },
+        { canal: "Google Meu Negócio", imagem: "Foto institucional", objetivo: "Tornar a escolha pelo atendimento mais segura e próxima." },
+        { canal: "Propostas comerciais", imagem: "Foto de autoridade", objetivo: "Elevar a percepção de valor do serviço apresentado." },
+        { canal: "Apresentações", imagem: "Foto de autoridade", objetivo: "Apoiar palestras, aulas e materiais com presença confiável." },
+        { canal: "Posts de autoridade", imagem: "Conteúdo ou autoridade", objetivo: "Dar peso visual a orientações, reflexões e análises." },
+        { canal: "Bastidores", imagem: "Foto de proximidade", objetivo: "Humanizar a rotina e aproximar sem perder elegância." }
+      ],
+      orientacaoComunicacao: [
+        {
+          situacao: "Quando falar de autoridade",
+          foto: "Use fotos com olhar direto, postura firme e composição mais limpa."
+        },
+        {
+          situacao: "Quando falar de bastidores",
+          foto: "Use imagens leves, naturais e próximas, com sensação de rotina real."
+        },
+        {
+          situacao: "Quando falar de venda",
+          foto: "Use uma imagem segura, objetiva e acolhedora, com leitura imediata."
+        },
+        {
+          situacao: "Quando falar da própria história",
+          foto: "Use fotos mais humanas, com expressão suave e clima contemplativo."
+        },
+        {
+          situacao: "Quando falar de conteúdo educativo",
+          foto: "Use imagens de clareza técnica: leitura, escrita, fala ou olhar atento."
+        }
+      ],
+      proximosPassos: [
+        "Atualizar foto de perfil no WhatsApp profissional",
+        "Atualizar LinkedIn",
+        "Atualizar Instagram",
+        "Revisar bio",
+        "Criar post de apresentação",
+        "Usar foto de autoridade em conteúdos educativos",
+        "Usar foto próxima em stories",
+        "Atualizar site ou página de contato",
+        "Usar imagens em propostas comerciais",
+        "Manter coerência entre imagem, texto e oferta"
+      ]
+    };
+
+    let dadosRelatorio = exemploRelatorio;
+
+    const navItems = [
+      { label: "Resumo", href: "#resumo" },
+      { label: "Arquétipo", href: "#arquetipo" },
+      { label: "Direção", href: "#direcao" },
+      { label: "Cores", href: "#cores" },
+      { label: "Uso das fotos", href: "#uso-fotos" },
+      { label: "Próximos passos", href: "#proximos-passos" }
+    ];
+
+    const iconPaths = {
+      spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8L18 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
+      line: '<path d="M12 4v16M8 8l4-4 4 4M6 20h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+      hand: '<path d="M7 12V8a1.4 1.4 0 0 1 2.8 0v4M9.8 11V6.5a1.4 1.4 0 0 1 2.8 0V12M12.6 11V7.5a1.4 1.4 0 0 1 2.8 0V13M15.4 12v-1.5a1.4 1.4 0 0 1 2.8 0V14c0 4-2.5 6-5.7 6H12c-2.2 0-4-1.1-5.1-3L5 13.5a1.5 1.5 0 0 1 2.6-1.5l1.2 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
+      eye: '<path d="M3.5 12s3-5 8.5-5 8.5 5 8.5 5-3 5-8.5 5-8.5-5-8.5-5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.5"/>',
+      smile: '<path d="M8 14s1.4 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5"/>',
+      fabric: '<path d="M8 4h8l3 4-2.5 2V20h-9V10L5 8l3-4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 4c.8 1.4 1.8 2 3 2s2.2-.6 3-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+      frame: '<path d="M5 5h14v14H5V5Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 15l2.5-3 2 2.2 1.5-1.7 2 2.5M8 8h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
+      sun: '<path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+      crop: '<path d="M7 3v14h14M3 7h14v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
+      check: '<path d="M5 12.5 10 17 19 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+      camera: '<path d="M4 8h4l1.5-2h5L16 8h4v11H4V8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.5"/>'
+    };
+
+    function $(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function createElement(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined) element.textContent = text;
+      return element;
+    }
+
+    function icon(name) {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("aria-hidden", "true");
+      svg.innerHTML = iconPaths[name] || iconPaths.spark;
+      return svg;
+    }
+
+    function renderLogo() {
+      const target = $("#logoMarca");
+      if (!dadosRelatorio.logo) return;
+      target.textContent = "";
+      const image = document.createElement("img");
+      image.src = dadosRelatorio.logo;
+      image.alt = "Logo AURA Fotografia";
+      target.append(image);
+    }
+
+    function renderNavigation() {
+      const desktop = $("#desktopNav");
+      const mobile = $("#mobileMenu");
+      navItems.forEach((item) => {
+        const desktopLink = createElement("a", "", item.label);
+        desktopLink.href = item.href;
+        desktop.append(desktopLink);
+
+        const mobileLink = createElement("a", "", item.label);
+        mobileLink.href = item.href;
+        mobile.append(mobileLink);
+      });
+    }
+
+    function renderClientMeta() {
+      const data = [
+        ["Nome", dadosRelatorio.cliente],
+        ["Profissão", dadosRelatorio.profissao],
+        ["Cidade", dadosRelatorio.cidade],
+        ["Data", dadosRelatorio.data]
+      ];
+      const container = $("#clientMeta");
+      data.forEach(([label, value]) => {
+        const item = createElement("div", "meta-item");
+        item.append(createElement("span", "meta-label", label));
+        item.append(createElement("span", "meta-value", value));
+        container.append(item);
+      });
+    }
+
+    function renderMainPhoto() {
+      const frame = $("#fotoPrincipal");
+      if (dadosRelatorio.fotoPrincipal) {
+        const image = document.createElement("img");
+        image.src = dadosRelatorio.fotoPrincipal;
+        image.alt = `Foto principal de ${dadosRelatorio.cliente}`;
+        image.onerror = () => renderPhotoPlaceholder(frame);
+        frame.append(image);
+      } else {
+        renderPhotoPlaceholder(frame);
+      }
+      $("#photoCaption").textContent = dadosRelatorio.cliente;
+    }
+
+    function renderPhotoPlaceholder(frame) {
+      frame.innerHTML = "";
+      const placeholder = createElement("div", "photo-placeholder");
+      placeholder.append(icon("camera"));
+      placeholder.append(createElement("strong", "", "Foto principal do ensaio"));
+      placeholder.append(createElement("span", "", "Espaço reservado para a imagem de capa do cliente."));
+      frame.append(placeholder);
+    }
+
+    function renderSummary() {
+      $("#resumoTexto").textContent = dadosRelatorio.resumoEstrategico;
+      const container = $("#cardsResumo");
+      dadosRelatorio.cardsResumo.forEach((card) => {
+        const item = createElement("article", "mini-card");
+        item.append(createElement("span", "", card.titulo));
+        item.append(createElement("strong", "", card.destaque));
+        item.append(createElement("p", "", card.texto));
+        container.append(item);
+      });
+    }
+
+    function renderArchetypes() {
+      const grid = $("#archetypeGrid");
+      dadosRelatorio.arquetipos.forEach((item) => {
+        const card = createElement("article", "content-card");
+        card.append(createElement("span", "card-eyebrow", item.tipo));
+        card.append(createElement("div", "archetype-name", item.nome));
+
+        const description = document.createElement("dl");
+        const dtDescription = createElement("dt", "", "Descrição curta");
+        const ddDescription = createElement("dd", "", item.descricao);
+        const dtPhoto = createElement("dt", "", "Como aparece nas fotos");
+        const ddPhoto = createElement("dd", "", item.nasFotos);
+        description.append(dtDescription, ddDescription, dtPhoto, ddPhoto);
+        card.append(description);
+        grid.append(card);
+      });
+    }
+
+    function renderStrategicAnalysis() {
+      const analysis = dadosRelatorio.analiseEstrategica || {};
+      const panel = $("#analysisPanel");
+      const origem = dadosRelatorio.origemAnalise || "Análise estratégica";
+
+      $("#origemAnalise").textContent = origem;
+
+      const main = createElement("div", "analysis-main");
+      main.append(
+        createElement(
+          "p",
+          "",
+          analysis.texto ||
+            "Esta leitura conecta as respostas do diagnóstico com arquétipos, percepção desejada, paleta e aplicação prática das imagens."
+        )
+      );
+
+      const colorCard = createElement("article", "analysis-card");
+      colorCard.append(createElement("span", "", "Estratégia cromática"));
+      colorCard.append(createElement("strong", "", "Como a cor sustenta a mensagem"));
+      colorCard.append(
+        createElement(
+          "p",
+          "",
+          analysis.estrategiaCromatica ||
+            "Tons profundos sustentam autoridade, tons claros aproximam e detalhes de sofisticação devem aparecer sem competir com a expressão."
+        )
+      );
+      main.append(colorCard);
+
+      const cards = createElement("div", "analysis-cards");
+      [
+        {
+          label: "Arquétipo principal",
+          title: dadosRelatorio.arquetipoPrincipal || "Direção principal",
+          text:
+            analysis.arquetipoPrincipal ||
+            "Este arquétipo orienta a primeira impressão e define a força central da presença visual."
+        },
+        {
+          label: "Arquétipo secundário",
+          title: dadosRelatorio.arquetipoSecundario || "Direção complementar",
+          text:
+            analysis.arquetipoSecundario ||
+            "Este arquétipo complementa a leitura para equilibrar autoridade, proximidade e personalidade."
+        }
+      ].forEach((item) => {
+        const card = createElement("article", "analysis-card");
+        card.append(createElement("span", "", item.label));
+        card.append(createElement("strong", "", item.title));
+        card.append(createElement("p", "", item.text));
+        cards.append(card);
+      });
+
+      panel.append(main, cards);
+    }
+
+    function renderPerception() {
+      const tagContainer = $("#percepcaoDesejada");
+      dadosRelatorio.percepcaoDesejada.forEach((word) => {
+        tagContainer.append(createElement("span", "tag", word));
+      });
+
+      $("#textoPercepcaoDesejada").textContent = dadosRelatorio.textoPercepcaoDesejada;
+      const list = $("#orientadoresPercepcao");
+      dadosRelatorio.orientadoresPercepcao.forEach((item) => {
+        const li = document.createElement("li");
+        li.append(icon("check"));
+        li.append(createElement("span", "", item));
+        list.append(li);
+      });
+    }
+
+    function renderAvoidList() {
+      const grid = $("#avoidGrid");
+      dadosRelatorio.percepcaoEvitar.forEach((item) => {
+        const card = createElement("article", "avoid-card");
+        card.append(createElement("h3", "", item.titulo));
+        card.append(createElement("p", "", item.texto));
+        grid.append(card);
+      });
+    }
+
+    function renderDirection() {
+      const grid = $("#directionGrid");
+      dadosRelatorio.direcaoVisual.forEach((item) => {
+        const card = createElement("article", "direction-card");
+        const iconBox = createElement("div", "card-icon");
+        iconBox.append(icon(item.icone));
+        card.append(iconBox);
+        card.append(createElement("h3", "", item.titulo));
+        card.append(createElement("p", "", item.texto));
+        grid.append(card);
+      });
+    }
+
+    function renderColors() {
+      const grid = $("#colorGrid");
+      dadosRelatorio.coresSugeridas.forEach((color) => {
+        const card = createElement("article", "color-card");
+        const dot = createElement("span", "color-dot");
+        dot.style.background = color.hex;
+        const info = createElement("div");
+        info.append(createElement("strong", "", color.nome));
+        info.append(createElement("code", "", color.hex));
+        info.append(createElement("p", "", color.uso));
+        card.append(dot, info);
+        grid.append(card);
+      });
+
+      const list = $("#colorTips");
+      dadosRelatorio.comoUsarCores.forEach((tip) => {
+        list.append(createElement("li", "", tip));
+      });
+
+      const situationGrid = $("#situationColorGrid");
+      const situations = dadosRelatorio.coresPorSituacao || [];
+      situations.forEach((item) => {
+        const card = createElement("article", "situation-color-card");
+        card.append(createElement("span", "", item.situacao || "Situação"));
+        card.append(createElement("strong", "", item.cores || "Paleta recomendada"));
+        card.append(createElement("p", "", item.orientacao || item.uso || "Use esta combinação para sustentar a intenção da imagem."));
+        situationGrid.append(card);
+      });
+    }
+
+    function renderPhotoUse() {
+      const grid = $("#photoUseGrid");
+      dadosRelatorio.usoFotos.forEach((item) => {
+        const card = createElement("article", "photo-use-card");
+        card.append(createElement("h3", "", item.tipo));
+        card.append(detailRow("Onde usar", item.onde));
+        card.append(detailRow("Objetivo", item.objetivo));
+        card.append(detailRow("Exemplo prático", item.exemplo));
+        grid.append(card);
+      });
+    }
+
+    function detailRow(label, text) {
+      const row = createElement("div", "detail-row");
+      row.append(createElement("span", "", label));
+      row.append(createElement("p", "", text));
+      return row;
+    }
+
+    function renderApplicationMap() {
+      const tbody = $("#applicationTable tbody");
+      dadosRelatorio.mapaAplicacao.forEach((row) => {
+        const tr = document.createElement("tr");
+        const canal = createElement("td", "", row.canal);
+        canal.setAttribute("data-label", "Canal");
+        const imagem = createElement("td", "", row.imagem);
+        imagem.setAttribute("data-label", "Imagem indicada");
+        const objetivo = createElement("td", "", row.objetivo);
+        objetivo.setAttribute("data-label", "Objetivo");
+        tr.append(canal, imagem, objetivo);
+        tbody.append(tr);
+      });
+    }
+
+    function renderCommunication() {
+      const grid = $("#communicationGrid");
+      dadosRelatorio.orientacaoComunicacao.forEach((item) => {
+        const card = createElement("article", "communication-card");
+        const iconBox = createElement("div", "card-icon");
+        iconBox.append(icon("spark"));
+        card.append(iconBox);
+        card.append(createElement("h3", "", item.situacao));
+        card.append(createElement("p", "", item.foto));
+        grid.append(card);
+      });
+    }
+
+    function renderGuideAndSteps() {
+      $("#fraseGuia").textContent = dadosRelatorio.fraseGuia;
+      const grid = $("#stepGrid");
+      dadosRelatorio.proximosPassos.forEach((step, index) => {
+        const card = createElement("article", "step-card");
+        const number = createElement("span", "step-number", String(index + 1).padStart(2, "0"));
+        const content = createElement("div");
+        content.append(createElement("h3", "", step));
+        content.append(createElement("p", "", "Aplicar este ponto ajuda a manter coerência entre imagem, texto e oferta."));
+        card.append(number, content);
+        grid.append(card);
+      });
+    }
+
+    function setupInteractions() {
+      document.querySelectorAll("[data-print]").forEach((button) => {
+        button.addEventListener("click", () => window.print());
+      });
+
+      const contactButton = $("#contactButton");
+      if (dadosRelatorio.contatoUrl) contactButton.href = dadosRelatorio.contatoUrl;
+
+      const menuToggle = $("#menuToggle");
+      const mobileMenu = $("#mobileMenu");
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      mobileMenu.addEventListener("click", (event) => {
+        if (event.target.matches("a")) {
+          mobileMenu.classList.remove("is-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const active = `#${entry.target.id}`;
+          document.querySelectorAll(".desktop-nav a").forEach((link) => {
+            link.classList.toggle("is-active", link.getAttribute("href") === active);
+          });
+        });
+      }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
+
+      document.querySelectorAll("section[id]").forEach((section) => sectionObserver.observe(section));
+    }
+
+    function getReportSlug() {
+      const match = window.location.pathname.match(/\/relatorio\/([^/]+)/);
+      return match ? decodeURIComponent(match[1]) : "";
+    }
+
+    function showReportStatus(title, text, hidePage = false) {
+      const status = $("#reportStatus");
+      $("#reportStatusTitle").textContent = title;
+      $("#reportStatusText").textContent = text;
+      status.hidden = false;
+      $(".page-shell").hidden = hidePage;
+    }
+
+    function hideReportStatus() {
+      $("#reportStatus").hidden = true;
+      $(".page-shell").hidden = false;
+    }
+
+    async function loadReportData() {
+      const slug = getReportSlug();
+
+      if (!slug || window.location.protocol === "file:") {
+        return exemploRelatorio;
+      }
+
+      showReportStatus("Carregando relatório", "Estamos preparando sua entrega premium.");
+
+      const response = await fetch(`/api/reports/${encodeURIComponent(slug)}`, {
+        credentials: "same-origin"
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.message || "Não foi possível carregar este relatório.");
+      }
+
+      return {
+        ...exemploRelatorio,
+        ...data.report
+      };
+    }
+
+    function renderPage() {
+      renderLogo();
+      renderNavigation();
+      renderClientMeta();
+      renderMainPhoto();
+      renderSummary();
+      renderArchetypes();
+      renderStrategicAnalysis();
+      renderPerception();
+      renderAvoidList();
+      renderDirection();
+      renderColors();
+      renderPhotoUse();
+      renderApplicationMap();
+      renderCommunication();
+      renderGuideAndSteps();
+      setupInteractions();
+    }
+
+    async function initReportPage() {
+      try {
+        dadosRelatorio = await loadReportData();
+        hideReportStatus();
+        renderPage();
+      } catch (error) {
+        showReportStatus("Relatório indisponível", error.message, true);
+      }
+    }
+
+    initReportPage();
+  </script>
+</body>
+</html>

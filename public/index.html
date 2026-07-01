@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diagnóstico de Imagem Profissional | AURA Fotografia</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="/js/app.js"></script>
+  </head>
+  <body class="client-body">
+    <main class="client-shell">
+      <section id="landingView" class="client-view landing-view">
+        <img class="brand-logo" src="/assets/logo-aura.png" alt="AURA Fotografia" />
+
+        <div class="main-card">
+          <p class="eyebrow">AURA Fotografia</p>
+          <h1>Diagnóstico de Imagem Profissional</h1>
+          <p class="lead">
+            Antes do ensaio, vamos entender como sua imagem deve comunicar valor,
+            confiança e posicionamento.
+          </p>
+          <p class="support-text">
+            Este diagnóstico orienta a direção do ensaio, escolha de expressões,
+            postura, estilo visual e uso estratégico das imagens após a entrega.
+          </p>
+
+          <form id="signupForm" class="stacked-form" novalidate>
+            <div class="field">
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+
+            <p id="signupMessage" class="form-message" role="alert"></p>
+            <button class="primary-button full-button" type="submit">Entrar no diagnóstico</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="formView" class="client-view form-view" hidden>
+        <header class="form-topbar">
+          <img class="small-logo" src="/assets/logo-aura.png" alt="AURA Fotografia" />
+          <div>
+            <p id="stepText" class="eyebrow">Etapa 2 de 12</p>
+            <h1 id="blockTitle">Identidade profissional</h1>
+          </div>
+        </header>
+
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <form id="questionForm" class="question-card" novalidate>
+          <div id="fieldsContainer" class="fields-container"></div>
+          <p id="formMessage" class="form-message" role="alert"></p>
+
+          <footer class="form-actions">
+            <button id="backButton" class="secondary-button" type="button">Voltar</button>
+            <button id="nextButton" class="primary-button" type="submit">Próximo</button>
+          </footer>
+        </form>
+      </section>
+
+      <section id="successView" class="client-view success-view" hidden>
+        <img class="brand-logo" src="/assets/logo-aura.png" alt="AURA Fotografia" />
+        <div class="main-card success-card">
+          <p class="eyebrow">Diagnóstico enviado</p>
+          <h1>Diagnóstico enviado com sucesso.</h1>
+          <p class="lead">
+            A partir das suas respostas, o AURA irá preparar a direção visual do
+            seu ensaio e o relatório de imagem profissional.
+          </p>
+          <p class="support-text">
+            Você não precisa se preocupar em saber posar. O processo será conduzido
+            com base no seu posicionamento, seu objetivo e o público que deseja alcançar.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

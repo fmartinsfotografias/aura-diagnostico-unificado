@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel AURA | Diagnóstico de Imagem Profissional</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="/js/admin.js"></script>
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section id="loginView" class="admin-login">
+        <img class="brand-logo" src="/assets/logo-aura.png" alt="AURA Fotografia" />
+
+        <form id="loginForm" class="main-card login-card" novalidate>
+          <p class="eyebrow">Área administrativa</p>
+          <h1>Painel AURA</h1>
+
+          <div class="field">
+            <label for="adminEmail">E-mail</label>
+            <input id="adminEmail" name="email" type="email" autocomplete="username" required />
+          </div>
+
+          <div class="field">
+            <label for="adminPassword">Senha</label>
+            <input
+              id="adminPassword"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </div>
+
+          <p id="loginMessage" class="form-message" role="alert"></p>
+          <button class="primary-button full-button" type="submit">Entrar</button>
+        </form>
+      </section>
+
+      <section id="dashboardView" class="dashboard-view" hidden>
+        <header class="admin-header">
+          <div class="admin-title">
+            <img class="small-logo" src="/assets/logo-aura.png" alt="AURA Fotografia" />
+            <div>
+              <p class="eyebrow">Diagnóstico de Imagem Profissional</p>
+              <h1>Painel AURA</h1>
+            </div>
+          </div>
+          <button id="logoutButton" class="secondary-button" type="button">Sair</button>
+        </header>
+
+        <section id="statsGrid" class="stats-grid" aria-label="Resumo de diagnósticos"></section>
+
+        <section class="filters-panel">
+          <div class="field">
+            <label for="searchInput">Buscar por nome ou e-mail</label>
+            <input id="searchInput" type="search" placeholder="Nome ou e-mail da cliente" />
+          </div>
+
+          <div class="field">
+            <label for="statusFilter">Filtrar por status</label>
+            <select id="statusFilter">
+              <option value="">Todos</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="list-panel">
+          <div class="panel-heading">
+            <h2>Diagnósticos</h2>
+            <button id="refreshButton" class="secondary-button" type="button">Atualizar</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="diagnostics-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>Data de envio</th>
+                  <th>Status</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="diagnosticsTableBody"></tbody>
+            </table>
+          </div>
+
+          <p id="emptyState" class="empty-state" hidden>Nenhum diagnóstico encontrado.</p>
+        </section>
+      </section>
+    </main>
+
+    <section id="detailPanel" class="detail-panel" hidden>
+      <div class="detail-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+        <header class="detail-header">
+          <div>
+            <p id="detailSubtitle" class="eyebrow">Diagnóstico</p>
+            <h2 id="detailTitle">Cliente</h2>
+          </div>
+          <button id="closeDetailButton" class="icon-button" type="button" aria-label="Fechar">×</button>
+        </header>
+
+        <div id="detailContent" class="detail-content"></div>
+
+        <footer class="detail-actions">
+          <label class="status-control" for="detailStatus">Status</label>
+          <select id="detailStatus"></select>
+          <button id="openReportButton" class="secondary-button" type="button">Ver relatório</button>
+          <button id="copyReportLinkButton" class="secondary-button" type="button">Copiar link</button>
+          <button id="saveReportButton" class="primary-button" type="button">Salvar relatório</button>
+          <button id="regenerateReportButton" class="secondary-button" type="button">Regenerar relatório</button>
+          <button id="togglePublishReportButton" class="primary-button" type="button">Publicar relatório</button>
+          <button id="copyGptPromptButton" class="primary-button" type="button">Copiar prompt GPT</button>
+          <button id="importGptReportButton" class="secondary-button" type="button">Importar resposta GPT</button>
+          <button id="copyBriefingButton" class="primary-button" type="button">
+            Copiar briefing para ChatGPT
+          </button>
+          <button id="downloadTxtButton" class="secondary-button" type="button">Baixar TXT</button>
+          <button id="downloadJsonButton" class="secondary-button" type="button">Baixar JSON</button>
+          <button id="deleteDiagnosticButton" class="danger-button" type="button">Excluir diagnóstico</button>
+        </footer>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
