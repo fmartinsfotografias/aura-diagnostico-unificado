@@ -157,3 +157,41 @@ No Render:
 - Não remova o Persistent Disk depois de começar a usar.
 - Faça backup periódico do banco, principalmente antes de alterações grandes.
 - Se trocar `AURA_ADMIN_PASSWORD` depois que o admin já foi criado, a senha antiga continua no banco. Para trocar senha depois, será preciso criar uma rotina de alteração ou resetar o admin.
+
+## Erro: EACCES Permission Denied Mkdir `/var/data`
+
+Se aparecer um erro parecido com:
+
+```text
+Error: EACCES: permission denied, mkdir '/var/data'
+```
+
+significa que o sistema tentou usar:
+
+```text
+DB_PATH=/var/data/aura.sqlite
+```
+
+mas o Render ainda não disponibilizou um disco persistente em:
+
+```text
+/var/data
+```
+
+Para resolver em produção:
+
+1. Abra o Web Service no Render.
+2. Vá em `Disks`.
+3. Clique em `Add Disk`.
+4. Configure:
+
+```text
+Name: aura-data
+Mount Path: /var/data
+Size: 1 GB
+```
+
+5. Salve.
+6. Faça novo deploy/restart.
+
+Para testar rapidamente sem disco, remova temporariamente a variável `DB_PATH` das variáveis de ambiente e faça novo deploy. Nesse modo o sistema pode abrir, mas os diagnósticos não devem ser considerados permanentes.

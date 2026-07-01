@@ -71,19 +71,21 @@ npm start
 
 Se não definir `PORT`, o sistema usa a porta `3000`.
 
-## Publicar no Render
+## Publicar sem custo inicial
 
-Para colocar o sistema na internet, siga o guia:
-
-```text
-DEPLOY-RENDER.md
-```
-
-Em produção, configure o banco no disco persistente com:
+Para colocar o sistema na internet sem depender de disco pago no Render, siga o guia:
 
 ```text
-DB_PATH=/var/data/aura.sqlite
+DEPLOY-VERCEL-NEON.md
 ```
+
+Em produção na Vercel, configure o banco com:
+
+```text
+DATABASE_URL=connection_string_do_neon
+```
+
+O guia antigo do Render continua no arquivo `DEPLOY-RENDER.md`, mas ele só é recomendado se você decidir usar disco persistente pago.
 
 ## Arquivos principais
 
